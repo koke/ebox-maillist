@@ -2,7 +2,7 @@
 
 perldir = @PERLPATH@/EBox/Maillist/Model
 
-nobase_perl_DATA = Settings.pm 
+nobase_perl_DATA = Lists.pm Subscribers.pm 
 
 DISTCLEANFILES = 
 

@@ -23,7 +23,6 @@ use strict;
 use warnings;
 
 use base qw(EBox::GConfModule EBox::Model::ModelProvider
-            EBox::Model::CompositeProvider 
             EBox::ServiceModule::ServiceInterface);
 
 
@@ -63,7 +62,8 @@ sub _create
 sub modelClasses 
 {
     return [
-        'EBox::Maillist::Model::Settings',
+        'EBox::Maillist::Model::Lists',
+        'EBox::Maillist::Model::Subscribers',
     ];
 }
 
@@ -73,7 +73,6 @@ sub modelClasses
 sub compositeClassess 
 {
     return [
-        'EBox::Maillist::Composite::Composite',
     ];
 }
 
@@ -127,8 +126,8 @@ sub menu
 {
     my ($self, $root) = @_;
     my $item = new EBox::Menu::Item(
-    'url' => 'Maillist/View/Settings',
-    'text' => __('Maillist'),
+    'url' => 'Maillist/View/Lists',
+    'text' => __('Mailing lists'),
     'order' => 3);
     $root->add($item);
 }

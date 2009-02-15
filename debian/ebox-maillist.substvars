@@ -1,2 +1,0 @@
-misc:Depends=gconf2 (>= 2.10.1-2)
-perl:Depends=perl (>= 5.6.0-16)

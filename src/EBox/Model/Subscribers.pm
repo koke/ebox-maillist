@@ -13,23 +13,22 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-# Class: EBox::Maillist::Model::Settings
+# Class: EBox::Maillist::Model::Subscribers
 #   
 #   TODO: Document class
 #
 
-package EBox::Maillist::Model::Settings;
+package EBox::Maillist::Model::Subscribers;
 
 use EBox::Gettext;
 use EBox::Validate qw(:all);
 
-use EBox::Types::Text;
-use EBox::Types::Text;
+use EBox::Types::EmailAddress;
 
 use strict;
 use warnings;
 
-use base 'EBox::Model::DataForm';
+use base 'EBox::Model::DataTable';
 
 sub new 
 {
@@ -48,25 +47,19 @@ sub _table
 
     my @tableHead = 
     ( 
-        new EBox::Types::Text(
-            'fieldName' => 'field1',
-            'printableName' => __('field1'),
-            'size' => '8',
-            'unique' => 1,
-            'editable' => 1
-        ),
-        new EBox::Types::Text(
-            'fieldName' => 'field2',
-            'printableName' => __('field2'),
-            'size' => '8',
+        new EBox::Types::EmailAddress(
+            'fieldName' => 'subscriber',
+            'printableName' => __('Subscriber email'),
+            'size' => '30',
             'unique' => 1,
             'editable' => 1
         ),
     );
     my $dataTable = 
     { 
-        'tableName' => 'Settings',
-        'printableTableName' => __('Settings'),
+        'tableName' => 'Subscribers',
+        'printableTableName' => __('Subscribers'),
+        'printableRowName' => __('Subscriber'),
         'modelDomain' => 'Maillist',
         'defaultActions' => ['add', 'del', 'editField', 'changeView' ],
         'tableDescription' => \@tableHead,

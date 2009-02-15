@@ -1,6 +1,0 @@
-c85ed057ad72d8e38c25449348ee69f4  usr/share/doc/ebox-maillist/changelog.gz
-eb5932a71cf901c1e55bbf0c1258a578  usr/share/perl5/EBox/Maillist/Model/Settings.pm
-51b0cbd3bdaa9e76212c67f558c52424  usr/share/perl5/EBox/Maillist/Composite/Composite.pm
-31fa09f1234d93605db5138ff2fce05e  usr/share/perl5/EBox/Maillist.pm
-9f6902a324a73ca4c63184dc87d7b2b7  usr/share/gconf/schemas/ebox-maillist.schemas
-d41d8cd98f00b204e9800998ecf8427e  usr/share/ebox/stubs/maillist/service.conf.mas

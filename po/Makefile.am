@@ -9,15 +9,23 @@ MAINTAINERCLEANFILES = Makefile.in ebox-modulename.pot
 
 # List of files which contain translatable strings.
 POTFILES_TMPL = \
+ ./debian/ebox-maillist/usr/share/ebox/stubs/maillist/service.conf.mas \
  ./stubs/service.conf.mas 
 
 POTFILES_PL = \
- ./src/EBox/Model/Settings.pm \
+ ./debian/ebox-maillist/usr/share/perl5/EBox/Maillist/Model/Lists.pm \
+ ./debian/ebox-maillist/usr/share/perl5/EBox/Maillist.pm \
+ ./src/EBox/Model/Lists.pm \
+ ./src/EBox/Model/Subscribers.pm \
  ./src/EBox/Composite/Composite.pm \
  ./src/EBox/Maillist.pm 
 
 POTFILES = \
- ./src/EBox/Model/Settings.pm \
+ ./debian/ebox-maillist/usr/share/perl5/EBox/Maillist/Model/Lists.pm \
+ ./debian/ebox-maillist/usr/share/perl5/EBox/Maillist.pm \
+ ./debian/ebox-maillist/usr/share/ebox/stubs/maillist/service.conf.mas \
+ ./src/EBox/Model/Lists.pm \
+ ./src/EBox/Model/Subscribers.pm \
  ./src/EBox/Composite/Composite.pm \
  ./src/EBox/Maillist.pm \
  ./stubs/service.conf.mas 
