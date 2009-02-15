@@ -59,6 +59,7 @@ src/EBox/Model/Makefile
 src/EBox/Types/Makefile
 schemas/Makefile
 stubs/Makefile
+tools/Makefile
 Makefile
 ])
 
