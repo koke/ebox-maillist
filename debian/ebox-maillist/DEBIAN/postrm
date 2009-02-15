@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# We need to unconfigure and purge module's configuration
+# before the gconf schemas have been removed (i.e before gconf
+# debhelper has been run). That's why we do things before
+# and after gconf debhelper is run
+if [ "$1" = "purge" ]; then
+        # Purge configuration
+        /usr/share/ebox/ebox-clean-gconf maillist || true
+fi
+
+
+# Automatically added by dh_gconf
+if [ "$1" = purge ]; then
+	OLD_DIR=/etc/gconf/schemas
+	SCHEMA_FILES="ebox-maillist.schemas "
+	if [ -d $OLD_DIR ]; then
+		for SCHEMA in $SCHEMA_FILES; do
+			rm -f $OLD_DIR/$SCHEMA
+		done
+		rmdir -p --ignore-fail-on-non-empty $OLD_DIR
+	fi
+fi
+# End automatically added section
+
+
+case "$1" in
+    remove)
+        kill `pidof gconfd-2` >/dev/null 2>&1 || true
+        # Restart eBox apache
+        invoke-rc.d ebox apache restart || true
+
+    ;;
+esac
+
+

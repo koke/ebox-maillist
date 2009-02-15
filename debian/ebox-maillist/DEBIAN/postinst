@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Automatically added by dh_gconf
+if [ "$1" = "configure" ]; then
+	gconf-schemas --register ebox-maillist.schemas 
+fi
+# End automatically added section
+
+
+case "$1" in
+    configure)
+        kill `pidof gconfd-2` >/dev/null 2>&1 || true
+
+        # Migrate data if needed
+        /usr/share/ebox/ebox-migrate /usr/share/ebox-maillist/migration/
+
+        # Restart eBox apache
+        invoke-rc.d ebox apache restart || true
+
+    ;;
+esac
+
+
+
+exit 0
