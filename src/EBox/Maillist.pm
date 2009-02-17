@@ -37,6 +37,8 @@ use EBox::Exceptions::DataExists;
 use EBox::Exceptions::DataMissing;
 use EBox::Exceptions::DataNotFound;
 
+use constant TRANSPORTFILE			=> '/etc/postfix/transport';
+
 # Method: _create
 #
 # Overrides:
@@ -110,7 +112,15 @@ sub actions
 #
 sub usedFiles
 {
-    return [];
+    my ($self) = @_;
+
+    return [
+            {
+              'file' => TRANSPORTFILE,
+              'reason' => __('To configure transports for mailman lists'),
+              'module' => 'maillist'
+            },
+    ];
 }
 
 # Method: enableActions 
