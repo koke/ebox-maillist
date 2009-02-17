@@ -57,6 +57,18 @@ sub _create
     return $self;
 }
 
+#  Method: enableModDepends
+#
+#   Override EBox::Module::Service::enableModDepends
+#
+sub enableModDepends
+{
+    my ($self) = @_;
+    my @depends =  ('mail');
+
+    return \@depends;
+}
+
 ## api functions
 
 # Overrides:
