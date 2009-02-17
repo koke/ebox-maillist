@@ -1,0 +1,6 @@
+<%args>
+	@domains
+</%args>
+% 	foreach my $domain (@domains) {
+$domain     mailman:
+% }

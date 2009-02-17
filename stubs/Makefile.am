@@ -2,7 +2,7 @@
 
 Stubdir = @STUBSPATH@/maillist
 
-nobase_Stub_DATA = 
+nobase_Stub_DATA = transport.mas
 
 EXTRA_DIST = $(nobase_Stub_DATA)
 
