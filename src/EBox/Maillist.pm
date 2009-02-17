@@ -30,7 +30,6 @@ use EBox::Validate qw( :all );
 use EBox::Global;
 use EBox::Gettext;
 use EBox::Sudo;
-use EBox::MailListLdap;
 
 use EBox::Exceptions::InvalidData;
 use EBox::Exceptions::MissingArgument;
@@ -51,7 +50,6 @@ sub _create
             printableName => __('Mailing lists'),
             domain => 'ebox-maillist',
             @_);
-    $self->{mlists} = new EBox::MailListLdap;
 
     bless($self, $class);
     return $self;
@@ -121,7 +119,6 @@ sub usedFiles
 #
 sub enableActions
 {
-    root(EBox::Config::share() . '/ebox-maillist/ebox-maillist-enable');
 }
 
 # Method: serviceModuleName 

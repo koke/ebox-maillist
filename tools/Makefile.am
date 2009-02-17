@@ -2,7 +2,7 @@
 
 SUBDIRS = 
 
-pkgdata_SCRIPTS = ebox-maillist-ldap ebox-maillist-enable
+pkgdata_SCRIPTS = 
 
 MAINTAINERCLEANFILES = Makefile.in
 

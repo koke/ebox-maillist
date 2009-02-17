@@ -3,7 +3,7 @@ SUBDIRS = Model Types
 
 perldir = @PERLPATH@/EBox
 
-nobase_perl_DATA = Maillist.pm MailListLdap.pm
+nobase_perl_DATA = Maillist.pm 
 
 DISTCLEANFILES = 
 

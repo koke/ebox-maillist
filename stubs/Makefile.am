@@ -2,7 +2,7 @@
 
 Stubdir = @STUBSPATH@/maillist
 
-nobase_Stub_DATA = service.conf.mas
+nobase_Stub_DATA = 
 
 EXTRA_DIST = $(nobase_Stub_DATA)
 
