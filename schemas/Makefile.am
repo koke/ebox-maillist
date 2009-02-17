@@ -3,8 +3,6 @@
 schemadir   = @GCONF_SCHEMA_FILE_DIR@
 schema_DATA = ebox-maillist.schemas 
 
-pkgdata_DATA = maillist.schema
-
-EXTRA_DIST = $(schema_DATA) $(pkgdata_DATA)
+EXTRA_DIST = $(schema_DATA)
 
 MAINTAINERCLEANFILES = Makefile.in
