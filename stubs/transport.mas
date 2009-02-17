@@ -1,6 +1,6 @@
 <%args>
-	@domains
+	@relayDomains
 </%args>
-% 	foreach my $domain (@domains) {
-$domain     mailman:
+% foreach my $domain (@relayDomains) {
+<% $domain %>     mailman:
 % }

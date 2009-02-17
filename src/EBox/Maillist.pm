@@ -140,6 +140,22 @@ sub serviceModuleName
     return 'maillist';
 }
 
+sub _regenConfig
+{
+    my ($self) = @_;
+
+	if ($self->isEnabled()) {
+        my @array = ();
+        my $mail = EBox::Global->modInstance('mail');
+        my @domains = $mail->relayDomains();
+
+        push(@array, 'relayDomains' => \@domains);
+
+        $self->writeConfFile(TRANSPORTFILE, "maillist/transport.mas", \@array);
+        EBox::Sudo::root('/usr/sbin/postmap ' . TRANSPORTFILE);
+	}
+}
+
 # Method: menu 
 #
 #       Overrides EBox::Module method.
