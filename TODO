@@ -1,0 +1,5 @@
+* Actual integration with mailman:
+    * Create/remove lists
+    * (Un)subscribe people
+    * Configure file size limits
+    * Configure privacy settings
