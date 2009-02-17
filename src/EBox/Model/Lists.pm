@@ -57,7 +57,7 @@ sub new
 sub populate_domain
 {
     my $mail = EBox::Global->modInstance('mail');
-    my @vdomains = $mail->{vdomains}->vdomains();
+    my @vdomains = $mail->relayDomains();
     my @options;
 
     foreach my $vdomain (@vdomains) {
